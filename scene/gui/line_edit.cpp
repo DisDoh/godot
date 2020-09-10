@@ -119,10 +119,10 @@ void LineEdit::_gui_input(Ref<InputEvent> p_event) {
 			selection.doubleclick = false;
 
 			if (DisplayServer::get_singleton()->has_feature(DisplayServer::FEATURE_VIRTUAL_KEYBOARD) && virtual_keyboard_enabled) {
-				if (selection.enabled) {
-					DisplayServer::get_singleton()->virtual_keyboard_show(text, get_global_rect(), false, max_length, selection.begin, selection.end);
-				} else {
-					DisplayServer::get_singleton()->virtual_keyboard_show(text, get_global_rect(), false, max_length, cursor_pos);
+//				if (selection.enabled) {
+//					DisplayServer::get_singleton()->virtual_keyboard_show(text, get_global_rect(), false, max_length, selection.begin, selection.end);
+//				} else {
+//					DisplayServer::get_singleton()->virtual_keyboard_show(text, get_global_rect(), false, max_length, cursor_pos);
 				}
 			}
 		}
@@ -310,7 +310,7 @@ void LineEdit::_gui_input(Ref<InputEvent> p_event) {
 				case KEY_ENTER: {
 					emit_signal("text_entered", text);
 					if (DisplayServer::get_singleton()->has_feature(DisplayServer::FEATURE_VIRTUAL_KEYBOARD) && virtual_keyboard_enabled) {
-						DisplayServer::get_singleton()->virtual_keyboard_hide();
+//						DisplayServer::get_singleton()->virtual_keyboard_hide();
 					}
 
 				} break;
@@ -942,10 +942,10 @@ void LineEdit::_notification(int p_what) {
 			}
 
 			if (DisplayServer::get_singleton()->has_feature(DisplayServer::FEATURE_VIRTUAL_KEYBOARD) && virtual_keyboard_enabled) {
-				if (selection.enabled) {
-					DisplayServer::get_singleton()->virtual_keyboard_show(text, get_global_rect(), false, max_length, selection.begin, selection.end);
-				} else {
-					DisplayServer::get_singleton()->virtual_keyboard_show(text, get_global_rect(), false, max_length, cursor_pos);
+//				if (selection.enabled) {
+//					DisplayServer::get_singleton()->virtual_keyboard_show(text, get_global_rect(), false, max_length, selection.begin, selection.end);
+//				} else {
+//					DisplayServer::get_singleton()->virtual_keyboard_show(text, get_global_rect(), false, max_length, cursor_pos);
 				}
 			}
 
@@ -963,7 +963,7 @@ void LineEdit::_notification(int p_what) {
 			ime_selection = Point2();
 
 			if (DisplayServer::get_singleton()->has_feature(DisplayServer::FEATURE_VIRTUAL_KEYBOARD) && virtual_keyboard_enabled) {
-				DisplayServer::get_singleton()->virtual_keyboard_hide();
+//				DisplayServer::get_singleton()->virtual_keyboard_hide();
 			}
 
 		} break;
